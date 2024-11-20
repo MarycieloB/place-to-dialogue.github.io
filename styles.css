@@ -1,305 +1,271 @@
-@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap');
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+body {
     font-family: Arial, sans-serif;
+    background-color: #e5e5e5;
 }
 
-
-header{
-    position: sticky;
-    top: 0;
-    overflow: hidden;
-}
-
-header nav ul {
-    width: 100%;
-    padding: 0.5rem 5rem;
+.header {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
     background-color: #3d3d3d;
-    color: #ffffff;
-    list-style: none;
+    padding: 10px 50px; /* Agrega más espacio a los lados */
 }
 
-header nav ul li {
-    padding: 0 1rem;
-}
-
-header nav ul li a{
-    list-style: none;
-    text-decoration: none;
-    color: white;
-}
-
-header nav ul li:nth-child(5) {
-    margin-left: auto;
-}
-
-header nav ul li button,
-header nav ul li input {
-    justify-content: flex-end;
-}
-
-header nav ul img {
-    width: 50px;
-    height: 50px;
+.logo-img {
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
 }
 
-header nav ul li input {
-    border-radius: 5px;
-    width: 12rem;
-    padding: .5rem;
-    outline: none;
-    height: 2rem;
-    border: none;
+.navbar a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
 }
 
-header nav ul li button {
-    width: 10rem;
-    height: 2.5rem;
-    border-radius: 5px;
-    background: #2C2C2C;
-    border: none;
-    color: white;
-    cursor: pointer;
+.search-bar {
+    margin-left: 10px;
+    padding: 5px;
 }
 
 .hero {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem;
-}
-
-main section:nth-child(odd){
     background-color: #cfa7a7;
-}
-
-main section:nth-child(even){
-    background-color: #e5e5e5;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .hero-content {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    width: 50%;
+    gap: 20px;
 }
 
-.hero-content img {
-    width: 30%;
-    height: 30%;
-}
-
-.hero-info{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 1rem;
-    align-items: flex-start;
-}
-
-.hero-info .hero-text-info {
-    text-align: justify;
-    font-size: 1.1rem;
+.hero-text p {
+    max-width: 400px;
+    color: black; /* Cambiado de blanco a negro */
 }
 
 
-.hero-button-info {
-    padding: 0.5rem 1.5rem;
+.button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #3d3d3d;
+    color: white;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
 }
 
-main .programs {
-    padding: 2rem;
+.programs {
+    margin: 30px;
     text-align: center;
 }
 
 .program-cards {
     display: flex;
     justify-content: center;
-    gap: 2rem;
-    margin-top: 2rem;
+    gap: 15px;
 }
 
 .card {
-    width: 15rem;
-    height: 18rem;
-    padding: 1rem;
-    border-radius: 5px;
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 
 .card img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
 }
 
-.card p {
-    margin-top: 0.5rem;
-}
-
-.card:nth-child(even){
-    background-color: #AFD0D6;
-}
-
-.card:nth-child(odd){
-    background-color: #BFB6BB;
-}
-
-main .about-us {
-    padding: 2rem;
-    text-align: center;
+.navbar {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start; /* Alinea los elementos del menú hacia la izquierda */
     align-items: center;
+    width: 100%;
 }
 
-main .about-us p{
-    width: 50%;
-    text-align: justify;
-    margin: 0 auto;
-    margin-top:1rem;
-    font-size: 1.1rem;
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    font-weight: bold;
 }
 
-main .information {
-    padding: 2rem 20rem;
+.search-bar {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-right: 20px;
+  }
+
+  
+  .login-button {
+    padding: 8px 12px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .login-button:hover {
+    background-color: #555;
+  }
+  .menu {
     display: flex;
-    gap: 5rem;
+    gap: 20px; /* Espacio entre los enlaces del menú */
+    margin-right: auto; /* Empuja los elementos del menú hacia la izquierda */
 }
 
-main .information > div{
-    text-align: center;
+.search-container {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Aumenta el espacio entre la barra de búsqueda y el perfil */
 }
-
-main .information > div p{
-    text-align: justify;
-    font-size: 1.1rem;
-    width: 80%;
-    margin: 0 auto;
-    margin-top: 1rem;
-}
-
 .modal {
-    display: none;
+    display: none; /* Se oculta por defecto */
     position: fixed;
     z-index: 1;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro tras modal */
     justify-content: center;
     align-items: center;
 }
 
+/* Contenido del modal */
 .modal-content {
     background-color: #fff;
-    padding: 1rem 2rem 2rem 2rem;
-    border-radius: 5px;
-    width: 25rem;
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px; /* Ajuste de ancho para el formulario */
+    text-align: left; /* Alineación del texto */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
     display: flex;
     flex-direction: column;
 }
 
+/* Botón cerrar (X) */
 .close {
-    font-size: 1.5rem;
+    font-size: 28px;
     font-weight: bold;
     color: #333;
+    cursor: pointer;
     text-align: right;
 }
 
-.close i {
-    cursor: pointer;
-}
-
-.close i:hover {
+.close:hover {
     color: red;
 }
 
+/* Estilo para formularios generales */
 form {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 15px; /* Espacio entre los campos */
 }
 
 form label {
-    font-size: 0.9rem;
+    font-size: 14px;
     font-weight: bold;
     color: #333;
 }
 
 form input {
-    padding: 0.8rem 1rem;
+    padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    font-size: 0.9rem;
+    font-size: 14px;
     width: 100%;
-    margin-top: 0.4rem;
 }
 
 form button {
-    padding: 0.8rem 1rem;
+    padding: 10px;
     background-color: #333;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 1.1rem;
+    font-size: 16px;
     font-weight: bold;
 }
 
 form button:hover {
     background-color: #555;
-    transition: all 0.3s ease;
 }
 
+/* Estilos específicos para enlaces dentro del formulario */
 form a {
-    font-size: 0.9rem;
-    font-weight: bold;
+    font-size: 14px;
     color: #333;
+    text-decoration: none;
+}
+
+form a:hover {
     text-decoration: underline;
 }
 
-.social-login {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 80%;
-    margin: 0 auto;
+/* Estilo para el mensaje de registro y social login */
+.login-form p, .register-form p {
+    font-size: 14px;
+    color: #555;
+    margin: 5px 0;
 }
 
-.social-login a i {
-    font-size: 1.5rem;
+/* Estilo de iconos de redes sociales */
+.social-login a {
+    margin: 0 10px;
 }
 
+.social-login a img {
+    width: 30px; /* Ajustar tamaño del ícono */
+}
+
+/* Modal adicional para el formulario de registro */
 .register-form {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
+.profile-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
 
+/* Imagen dentro del ícono */
+.profile-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+}
 .welcome-section{
     background-color: #cfa7a7;
     padding: 20px;
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
-    gap: 1rem;
+    
+
 }
 .perfil-image{
     
@@ -308,48 +274,6 @@ form a {
     border-radius: 50%;
     
 }
-
-/* Sección inferior: Opciones de cierre */
-.seccion-inferior {
-    text-align: center;
-    padding-top: 30px;
-}
-
-.opciones {
-    margin: 20px 0;
-}
-
-.boton-cierre {
-    margin: 10px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    background-color: #000601;
-    color: white;
-    border: none;
-    border-radius: 5px;
-}
-
-.boton-cierre:hover {
-    background-color: #0201038e;
-}
-
-#modal-cerrar-sesion .modal-content {
-    justify-content: center;
-    align-items: center;
-    gap: 1.5rem;
-}
-
-#modal-cerrar-sesion .modal-content button{
-    width: 10rem;
-    height: 2.5rem;
-    border-radius: 5px;
-    background: #2C2C2C;
-    border: none;
-    color: white;
-    cursor: pointer;
-}
-
 .info-section {
     background-color: #cfa7a7;
     padding: 40px;
@@ -369,27 +293,21 @@ form a {
     color: black;
 }
 
-.mission-vision{
-    text-align: right;
-}
-
-.mission-vision .container {
+.mission-vision {
     display: flex;
     justify-content: space-around;
     padding: 40px;
     background-color: #f2f2f2;
 }
 
-.mission-vision .container > div {
-    max-width: 20rem;
+.mission, .vision {
+    max-width: 500px;
     text-align: center;
-    text-align: justify;
 }
 
 .mission h2, .vision h2 {
     font-size: 24px;
     margin-bottom: 15px;
-    text-align: center;
 }
 
 .mission p, .vision p {
@@ -397,151 +315,21 @@ form a {
     color: #555;
 }
 
-.respiracion-section {
-    display: flex;
-    background-color: #f5f5f5;
-    padding: 20px;
-}
-
-/* Sección superior */
-.superior-section {
-    background-color: #cfa7a7;
-    padding: 20px;
-}
-
-.contenedor-superior {
-    display: flex;
-}
-
-.menu-lateral {
-    width: 25%;
-    background-color: #e1b1b1;
-    padding: 20px;
-    border-radius: 10px;
-}
-
-.menu-lateral h2 {
-    font-size: 20px;
-    margin-bottom: 10px;
-    color: #333;
-}
-
-.menu-lateral ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.menu-lateral li {
-    margin-bottom: 10px;
-    font-size: 16px;
-}
-
-.menu-lateral li:hover {
-    cursor: pointer;
-    color: #fff;
-    background-color: #333;
-    padding: 5px;
-    border-radius: 5px;
-}
-
-.contenido-lateral {
-    width: 75%;
-    padding-left: 20px;
-}
-
-.breadcrumb {
-    font-size: 18px;
-    color: #333;
-    margin-bottom: 20px;
-}
-
-.breadcrumb .home-icon {
-    margin-right: 5px;
-}
-
-.breadcrumb-link {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-}
-
-.breadcrumb span {
-    margin-right: 5px;
-}
-
-.content-superior h1 {
-    font-size: 24px;
-    color: white;
-    margin-bottom: 20px;
-}
-
-/* Imágenes de las técnicas */
-.imagenes-respiracion {
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 20px;
-}
-
-.imagenes-respiracion img {
-    max-width: 40%;
-    border-radius: 10px;
-}
-
-/* Sección inferior */
-.inferior-section {
-    background-color: #f5f5f5;
-    padding: 30px;
-}
-
-.descripcion-respiracion {
-    display: grid;
-    gap: 2rem;
-    grid-template-columns: repeat(3, 1fr);
-    justify-content: space-between;
-    width: 80%;
-    margin: 0 auto;
-    margin-bottom: 30px;
-}
-
-.columna-texto {
-    width: 50%;
-    font-size: 16px;
-    color: #333;
-    margin: 0 auto;
-    text-align: justify;
-}
-
-.columna-texto > p:first-child{
-    text-align: center;
-}
-
-/* Botón de salir */
-.salir-programa-btn {
+.continue-button {
     display: block;
-    margin: 0 auto;
+    margin: 30px auto;
     padding: 10px 20px;
     background-color: #333;
     color: white;
     border: none;
-}
-
-.feature_informacion {
     cursor: pointer;
     font-size: 16px;
     border-radius: 5px;
-    margin-right: 5rem;
 }
 
 .continue-button:hover {
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-.salir-programa-btn:hover {
     background-color: #555;
 }
-
 .program-section {
     display: flex;
     background-color: #cfa7a7;
@@ -652,9 +440,362 @@ form a {
     cursor: pointer;
     font-size: 16px;
     border-radius: 5px;
-    margin-right: 5rem;
+    align-self:flex-end
+
 }
 
 .continue-button:hover {
     background-color: #555;
+}
+.respiracion-section {
+    display: flex;
+    background-color: #f5f5f5;
+    padding: 20px;
+}
+
+/* Sección superior */
+.superior-section {
+    background-color: #cfa7a7;
+    padding: 20px;
+}
+
+.contenedor-superior {
+    display: flex;
+}
+
+.menu-lateral {
+    width: 25%;
+    background-color: #e1b1b1;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.menu-lateral h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.menu-lateral ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.menu-lateral li {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.menu-lateral li:hover {
+    cursor: pointer;
+    color: #fff;
+    background-color: #333;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.contenido-lateral {
+    width: 75%;
+    padding-left: 20px;
+}
+
+.breadcrumb {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.breadcrumb .home-icon {
+    margin-right: 5px;
+}
+
+.breadcrumb-link {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.breadcrumb span {
+    margin-right: 5px;
+}
+
+.content-superior h1 {
+    font-size: 24px;
+    color: white;
+    margin-bottom: 20px;
+}
+
+/* Imágenes de las técnicas */
+.imagenes-respiracion {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.imagenes-respiracion img {
+    max-width: 40%;
+    border-radius: 10px;
+}
+
+/* Sección inferior */
+.inferior-section {
+    background-color: #f5f5f5;
+    padding: 30px;
+}
+
+.descripcion-respiracion {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.columna-texto {
+    width: 24%;
+    font-size: 16px;
+    color: #333;
+}
+
+/* Botón de salir */
+.salir-programa-btn {
+    display: block;
+    margin: 0 auto;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.salir-programa-btn:hover {
+    background-color: #555;
+}
+.seccion-superior {
+    text-align: center;
+    background-color: #d9bfc1; /* Color rosado */
+    padding: 40px 20px;
+}
+
+.avatar-img {
+    width: 150px;
+    border-radius: 50%;
+    margin-top: 10px;
+}
+
+/* Sección inferior: Opciones de cierre */
+.seccion-inferior {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.opciones {
+    margin: 20px 0;
+}
+
+.boton-cierre {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #000601;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.boton-cierre:hover {
+    background-color: #0201038e;
+}
+
+.mensaje {
+    margin-top: 20px;
+    display: flex;
+    background-color: #fff;
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px; /* Ajuste de ancho para el formulario */
+    text-align: left; /* Alineación del texto */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    display: flex;
+    flex-direction: column;
+}
+
+.mensaje.oculto {
+    display: none;
+}
+
+.recover-password-section {
+    max-width: 600px;
+    margin: 50px auto;
+    text-align: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.recover-password-section h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.recover-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+.recover-form label {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.recover-form input {
+    width: 80%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.recover-form button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.recover-form button:hover {
+    background-color: #555;
+}
+.login-form p a {
+    font-size: 14px;
+    color: #333;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.login-form p a:hover {
+    color: #555;
+}
+/* Estilos generales para la sección de terapeutas */
+.therapist-section {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.therapist-section h2 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+
+/* Filtros de selección */
+.filters {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.filters label {
+    font-size: 16px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.filters select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 200px;
+}
+
+.filters button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.filters button:hover {
+    background-color: #555;
+}
+
+/* Estilos para la lista de terapeutas */
+#therapist-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#therapist-list li {
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#therapist-list li:hover {
+    background-color: #f0f0f0;
+}
+
+/* Estilos para los terapeutas seleccionados */
+#therapist-list li.selected {
+    background-color: #e0f7fa;
+    border-color: #00796b;
+}
+
+/* Estilo para el mensaje de no resultados */
+#therapist-list.empty {
+    text-align: center;
+    font-style: italic;
+    color: #777;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+#messages {
+    background-color: #f4f4f4;
+    padding: 10px;
+    height: 150px;
+    margin-bottom: 10px;
+    overflow-y: auto;
+    border-radius: 5px;
+}
+
+#chat-input {
+    width: 80%;
+    padding: 10px;
+    margin-right: 10px;
+}
+
+#chat-window {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+textarea {
+    min-height: 80px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
 }

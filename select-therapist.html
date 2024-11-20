@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seleccionar Terapeuta</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Asegúrate de tener un archivo CSS adecuado -->
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo"> 
+            <img src="logo2.jpg" alt="Logo" class="logo-img">
+        </div>
+        <nav class="navbar">
+            <div class="menu">
+                <a href="nuevo.html" class="nav-link">Inicio</a>
+                <a href="informacion.html" class="nav-link">Información importante</a>
+                <a href="bienvenida.html" class="nav-link">Sesiones con el chatbot</a>
+                <a href="update-profile.html" class="nav-link">Actualizar Perfil</a>
+                <a href="select-therapist.html" class="nav-link">Seleccionar Terapeuta</a>
+                <a href="user-dashboard.html" class="nav-link">Mi Panel</a>
+            </div>
+            
+        </nav>
+    </header>
+
+    <main>
+        <!-- Sección de Selección de Terapeuta -->
+        <section id="therapists">
+            <h2>Seleccionar Terapeuta</h2>
+            <p>Filtra por especialidad y disponibilidad:</p>
+            <form id="filter-form">
+                <label for="specialty">Especialidad:</label>
+                <select id="specialty" name="specialty">
+                    <option value="anxiety">Ansiedad</option>
+                    <option value="depression">Depresión</option>
+                    <option value="stress">Estrés</option>
+                </select>
+
+                <label for="availability">Disponibilidad:</label>
+                <input type="date" id="availability" name="availability" required>
+
+                <button type="submit">Buscar</button>
+            </form>
+
+            <h3>Terapeutas Disponibles:</h3>
+            <ul id="therapist-list">
+                <!-- Los terapeutas se generarán aquí -->
+            </ul>
+        </section>
+
+        <!-- Sección de Programación de Sesión -->
+        <section id="sessions">
+            <h2>Programar Sesión</h2>
+            <p>Selecciona una fecha y hora disponibles:</p>
+            <form id="schedule-form">
+                <label for="session-date">Fecha:</label>
+                <input type="date" id="session-date" name="session-date" required>
+
+                <label for="session-time">Hora:</label>
+                <input type="time" id="session-time" name="session-time" required>
+
+                <button type="submit">Programar Sesión</button>
+            </form>
+            <p id="session-status"></p>
+            <button id="cancel-session-btn" style="display:none;">Cancelar Sesión</button>
+        </section>
+
+        <!-- Sección de Pagos -->
+        <section id="payments">
+            <h2>Gestión de Pagos</h2>
+            <p>Realiza pagos seguros para tus sesiones y membresías:</p>
+            <form id="payment-form">
+                <label for="payment-method">Método de Pago:</label>
+                <select id="payment-method" name="payment-method">
+                    <option value="credit-card">Tarjeta de Crédito</option>
+                    <option value="paypal">PayPal</option>
+                </select>
+
+                <button type="submit">Pagar</button>
+            </form>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Plataforma de Apoyo</p>
+    </footer>
+
+    <script>
+        // Array de terapeutas para simular los datos
+        const therapists = [
+            { id: 1, name: "Terapeuta A", specialty: "anxiety", availableDate: "2024-12-05" },
+            { id: 2, name: "Terapeuta B", specialty: "depression", availableDate: "2024-12-06" },
+            { id: 3, name: "Terapeuta C", specialty: "stress", availableDate: "2024-12-07" }
+        ];
+
+        // Función para mostrar terapeutas disponibles
+        function renderTherapists(filter = {}) {
+            const list = document.getElementById("therapist-list");
+            list.innerHTML = "";
+            const filtered = therapists.filter(t => {
+                return (!filter.specialty || t.specialty === filter.specialty) &&
+                       (!filter.availability || t.availableDate === filter.availability);
+            });
+            if (filtered.length > 0) {
+                filtered.forEach(t => {
+                    const item = document.createElement("li");
+                    item.textContent = `${t.name} - Especialidad: ${t.specialty} - Disponibilidad: ${t.availableDate}`;
+                    item.addEventListener("click", () => {
+                        alert(`Has seleccionado a ${t.name}`);
+                        localStorage.setItem("selectedTherapist", JSON.stringify(t));  // Guarda la selección
+                    });
+                    list.appendChild(item);
+                });
+            } else {
+                const noResults = document.createElement("li");
+                noResults.textContent = "No se encontraron terapeutas que coincidan con los filtros.";
+                list.appendChild(noResults);
+            }
+        }
+
+        // Filtrado de terapeutas
+        document.getElementById("filter-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const specialty = document.getElementById("specialty").value;
+            const availability = document.getElementById("availability").value;
+            renderTherapists({ specialty, availability });
+        });
+
+        // Programar sesión
+        document.getElementById("schedule-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const sessionDate = document.getElementById("session-date").value;
+            const sessionTime = document.getElementById("session-time").value;
+            const therapist = JSON.parse(localStorage.getItem("selectedTherapist"));
+            
+            if (therapist) {
+                const status = document.getElementById("session-status");
+                status.textContent = `Sesión programada con ${therapist.name} para el ${sessionDate} a las ${sessionTime}.`;
+                document.getElementById("cancel-session-btn").style.display = "inline-block"; // Mostrar el botón de cancelación
+            } else {
+                alert("Por favor, selecciona un terapeuta primero.");
+            }
+        });
+
+        // Cancelar sesión
+        document.getElementById("cancel-session-btn").addEventListener("click", function() {
+            const status = document.getElementById("session-status");
+            status.textContent = "Sesión cancelada.";
+            document.getElementById("cancel-session-btn").style.display = "none"; // Ocultar el botón de cancelación
+        });
+
+        // Pago
+        document.getElementById("payment-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const method = document.getElementById("payment-method").value;
+            alert(`Pago realizado con éxito usando ${method}.`);
+        });
+
+        // Cargar terapeutas al iniciar
+        renderTherapists();
+    </script>
+
+</body>
+
+</html>
